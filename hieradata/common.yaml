@@ -37,8 +37,14 @@ accounts::users:
 accounts::accounts:
   oracle:
     name: oracle
+    authorized_keys:
+      - catalin
+      - oracle
 
 accounts::ssh_keys:
   oracle:
     type: ssh-rsa
     public: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDAlkOvreCuNFh8+Hir7xhqECVvFxQhdudeb90YVgey9/+4didY7Aq93mUUJ6uRP/V+aaFLO7r5xCVhHK6Lg8iHYzTsmjKLHf4Se9QRCOoFCYuVRcJqz6e+9PFB2gqToeOAOQaVWjaKJ3g0iiPerKEiYZMAd1QUGkvxH0pTCzWLpSN96yGw38qN3K3mwgsGhkqj+5PqTR+Ep8xO7DVzj25Zs3kaEN9uAVRhAOPUdNRg3kGeN21m0PQ3C7pQ3pDY2bvW8eQniL0TD00u2K2pPOBwGfZkiLTfTHMPUeB3DEpnbPM4tA0nGoFZxaWBAP3vgTyoBXvxqgCrNcGH7HOq7O1l'
+  catalin:
+    type: ssh-rsa
+    public: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC9b5MpbigvVejPrNyyTP1cBs31aUGE3ik+qGUBuQDusYzkqPw69r3rkqN5xaUEhmNxSGsDKNq54gGef5v1ILmxj0i3sCNdlaWEtmwbXuXwHyIMELUrysM2WgCoHFO2GUljjQ88b7eF69f8f7ukfCO7bzEjWlJDGAMj9L6iXQMxfd7OvbGt2Q4rVVSY5l/IC/a4wsRtqofVG76HQgAmXH3QQusHUm1ZsXr+sR656gDSRvrWdoeSJw+0PoOnbHsXeTdQb8ob7+wdnFLkv4hAVawbPadHWvwbtQNKtE/r/74+oueB3decFZp+vfXUSjQazDHoKxgF7+Y4uhTg3f+k47pL'
