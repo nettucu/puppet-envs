@@ -35,7 +35,7 @@ mod "puppetlabs/git"
 mod "puppetlabs/inifile"
 
 mod "hajee/ora_rac"
-mod "hajee/easy-type"
+mod "hajee/easy_type"
 mod "hajee/oracle"
 mod "biemond/oradb"
 
