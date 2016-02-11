@@ -34,6 +34,10 @@ accounts::users:
       - asmadmin
       - asmoper
 
+accounts::accounts:
+  oracle:
+    name: oracle
+
 accounts::ssh_keys:
   oracle:
     type: ssh-rsa
