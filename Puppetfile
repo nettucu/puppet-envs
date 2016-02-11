@@ -47,3 +47,6 @@ mod "puppetlabs/ntp"
 #mod 'redis',
 #  :git => 'git://github.com/glarizza/puppet-redis',
 #  :ref => 'feature/debian_support'
+
+mod 'accounts',
+  :git => 'git@github.com:nettucu/puppet-accounts.git'
