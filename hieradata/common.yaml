@@ -11,8 +11,13 @@ accounts::groups:
     gid: 501
   dba:
     gid: 502
-#  backupdba: backupdba
-#  dgdba: 
-#  asmdba:
-#  asmadmin:
-#  asmoper:
+  backupdba:
+    gid: 55003
+  dgdba:
+    gid: 55004
+  asmdba:
+    gid: 55005
+  asmadmin:
+    gid: 55006
+  asmoper:
+    gid: 55007
