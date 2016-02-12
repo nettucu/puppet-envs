@@ -50,3 +50,6 @@ mod "puppetlabs/ntp"
 
 mod 'accounts',
   :git => 'git@github.com:nettucu/puppet-accounts.git'
+
+mod 'loopback',
+  :git => 'git@github.com:nettucu/puppet-loopback.git'
