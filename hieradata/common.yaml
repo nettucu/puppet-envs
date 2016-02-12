@@ -6,6 +6,14 @@ ntp::servers:
   - 0.ro.pool.ntp.org
   - 1.ro.pool.ntp.org
 
+loopback::devices:
+  /u01/asmdisks:
+    owner: oracle
+    group: dba
+    files:
+      data1: 10
+      data2: 10
+
 accounts::groups:
   oinstall:
     gid: 501
