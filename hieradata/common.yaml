@@ -11,8 +11,8 @@ loopback::devices:
     owner: oracle
     group: dba
     files:
-      data1: 10
-      data2: 10
+      data1: 10240
+      data2: 10240
 
 accounts::groups:
   oinstall:
