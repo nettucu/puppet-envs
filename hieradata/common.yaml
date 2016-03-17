@@ -13,6 +13,7 @@ loopback::devices:
     files:
       data1: 10240
       data2: 10240
+      fra1: 10240
 
 accounts::groups:
   oinstall:
