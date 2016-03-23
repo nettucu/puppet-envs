@@ -17,12 +17,15 @@ class profile::base {
     ensure  => mounted,
     atboot  => true,
     fstype  => 'nfs4',
-    options =>'_netdev,rsize=32768,wsize=32768,timeo=300',
+    options => '_netdev,rsize=32768,wsize=32768,timeo=300',
+    device  => 'storage:/multimedia/dlds/db',
+    require => File['/mnt/db'],
   }
   file {
     '/stage':
-      target => '/mnt/db/stage',
-      ensure => link;
+      target  => '/mnt/db/stage',
+      ensure  => link,
+      require => Mount['/mnt/db'];
     '/opt/scripts':
       ensure => link,
       target => '/media/sf_scripts';
