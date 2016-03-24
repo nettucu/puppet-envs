@@ -32,10 +32,6 @@ export PROMPT_COMMAND='history -a'
 #aliases
 alias histupd="history -n"
 
-pathmunge ~/bin
-pathmunge /opt/android-sdk-linux/tools
-pathmunge /opt/android-sdk-linux/platform-tools
-
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
