@@ -7,6 +7,6 @@ class profile::oracle::base {
     owner   => 'oracle',
     group   => 'oinstall',
     mode    => '0664',
-    content => file('profile/oracle/bashrc'),
+    content => file('profile/oracle/files/bashrc'),
   }
 }
