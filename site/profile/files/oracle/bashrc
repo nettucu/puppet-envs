@@ -40,6 +40,7 @@ alias sqlplus='rlwrap sqlplus'
 alias rman='rlwrap rman'
 alias asmcmd='rlwrap asmcmd'
 alias adrci='rlwrap adrci'
+alias dgmgrl='rlwrap dgmgrl'
 
 #export PS1='[$ORACLE_SID:$( basename $ORACLE_HOME )][\u@\h \W]$ '
 
