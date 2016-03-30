@@ -4,9 +4,18 @@ class profile::base {
 
   #include loopback
 
-  package {
-    ['vim','rlwrap','sudo','screen','git','strace','gdb']:
-      ensure => present,
+  $packages = [
+    'vim','rlwrap','sudo','screen','git','strace','gdb','bash-completion',
+    'ksh','gcc','zsh','wget','curl','htop','git','colordiff','pv','tree','diff','lshw','yum-utils'
+  ]
+  package { $packages:
+      ensure => latest,
+  }
+
+  $services = ['dkms', 'NetworkManager']
+  service { $services:
+    ensure  => running,
+    require => Package[$packages],
   }
 
   file { '/mnt/db':
@@ -39,5 +48,12 @@ class profile::base {
     group   => 'root',
     mode    => '0644',
     content => file('profile/path-scripts.sh'),
+  }
+  file { '/etc/NetworkManager/dispatcher.d/99-hostname':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '755',
+    content => file('profile/etc/NetworkManager/dispatcher.d/99-hostname'),
   }
 }

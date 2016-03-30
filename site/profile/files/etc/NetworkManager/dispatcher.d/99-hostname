@@ -1,0 +1,38 @@
+#!/bin/bash
+
+iface=${1:-"eth0"}
+state=${2:-"up"}
+
+echo "iface = ${iface}"
+echo "state = ${state}"
+
+[[ "${state}" != "up" ]] && exit 0
+
+host="$( hostname -s )"
+domain="$( hostname -d )"
+domain=${domain:-"vm.local"}
+
+dns=192.168.1.2
+
+ipaddr=$( ip -4 -o addr show dev ${iface} | awk '{ print $4 }' | cut -d '/' -f1 )
+if [[ "${iface}" = "eth1" ]]; then
+  host="${host}-priv"
+elif [[ "${iface}" = "eth2" ]]; then
+  host="${host}-ic"
+elif [[ "${iface}" = "eth3" ]]; then
+  exit 0
+fi
+
+dnsip="$( dig @${dns} +nocmd +noall +answer A ${host}.${domain} | awk '{ print $NF }' )"
+echo "${iface} IP = ${ipaddr}"
+echo "DNSIP for ${host}.${domain} = ${dnsip}"
+
+if [[ "${ipaddr}" != "${dnsip}" ]]; then
+echo "
+server ${dns}
+zone ${domain}
+update delete ${host}.${domain} A
+update add ${host}.${domain} 86400 A ${ipaddr}
+show 
+send" | nsupdate
+fi
