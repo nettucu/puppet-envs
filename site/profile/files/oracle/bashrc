@@ -44,4 +44,4 @@ alias dgmgrl='rlwrap dgmgrl'
 
 #export PS1='[$ORACLE_SID:$( basename $ORACLE_HOME )][\u@\h \W]$ '
 
-export PS1='[${ORACLE_SID}:$( basename ${ORACLE_HOME})]\[\033[1;33m\]\u@\h\[\033[1;34m\]:\[\033[1;33m\]\w\[\033[0m\]\[\033[1;33m\]\$\[\033[0m\] '
+export PS1='[${ORACLE_SID:-"X"}:$( basename ${ORACLE_HOME:-"X"})]\[\033[1;33m\]\u@\h\[\033[1;34m\]:\[\033[1;33m\]\w\[\033[0m\]\[\033[1;33m\]\$\[\033[0m\] '
