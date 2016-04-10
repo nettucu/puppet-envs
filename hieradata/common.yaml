@@ -44,7 +44,7 @@ accounts::users:
       - vboxsf
   grid:
     uid: 502
-    gid: 502
+    gid: 501
     groups:
       - oinstall
       - asmdba

@@ -6,7 +6,8 @@ class profile::base {
 
   $packages = [
     'vim','rlwrap','sudo','screen','git','strace','gdb','bash-completion',
-    'ksh','gcc','zsh','wget','curl','htop','colordiff','pv','tree','diffutils','lshw','yum-utils'
+    'ksh','gcc','zsh','wget','curl','htop','colordiff','pv','tree','diffutils','lshw','yum-utils',
+    'elfutils-libelf-devel'
   ]
   package { $packages:
       ensure => latest,
