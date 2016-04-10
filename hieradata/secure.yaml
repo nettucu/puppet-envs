@@ -66,6 +66,73 @@ accounts::ssh_keys:
       CvVog0LEDVWw0hX4PYPhtq9VjJm2o4sMiDL1EJ5NJgjkub0kREZ91TARDvCk
       4JVwJJKe3cw+32OFT3x5MQfgdDzRSV+wCoyl00IIOZi8pNq6YwVqZapJuLqF
       HezVd6EujWzvpSJqhZGwOk+qz7ybmwdB]
+  grid:
+    type: ssh-rsa
+    public: >
+      ENC[PKCS7,MIIC7QYJKoZIhvcNAQcDoIIC3jCCAtoCAQAxggEhMIIBHQIBADAFMAACAQEw
+      DQYJKoZIhvcNAQEBBQAEggEALBLt7yVTGeRvib92/AqqAXzxNFLLg60A06LA
+      wiy+p0+WEzc8jl+CF+M6Oy/g/QfBn5Bm7H5pK+tpLw+XlllDvY1PpADmZL10
+      n8jQZecojXJUU98ky54h5cIMdYKPErpKFZq43xmdI9pa6qL39unXjQrHIkXB
+      +lzxCYpYBsmlxx/zexeI9NFp7c2WIPRkTCW3e12bkby0XWqEstT8q4t8YaPs
+      GLUMaV19hwsetTe45z2Ib/3AjFiG6/rIvjctdtGvISXRkwGxNu5ccf9NGioS
+      xVAUo95v4S0sAQOnvBxvj26l46OBVYJbHcUp8k3M9ETLDIcwey0puDEg5gXo
+      oSkEaTCCAa4GCSqGSIb3DQEHATAdBglghkgBZQMEASoEEFRtAMRYfpu8Owq/
+      PgaLIziAggGAy73g6G9HzDivmkKoa+juCQm7L1/J4TDy8CpLIm3Qq0qZcwK2
+      SI6uKy0HPmJ86R8mfyLJ6bMGWE8Aay4Eto66DwXTs5tS0pXnAsz78/K36J/W
+      UUgu6dY7w6GbusOH9lu/Q/5yo3PcDTEu3urwXGRlSuXq3bfO15rNXNgpf230
+      QNiqKot7A6bWk1+0hMNddDB6idMVqNKulholFaHSA59/MoThWkIwl3t55lcE
+      UFs9xZv8WGHNOX2fSt2XHpLf7TjVJ4E3oiRuZfJOJ5rf509DEyQWTeS5qFkU
+      gQ1/obDm7rsNk1K73+0nDSTKnC640/sW4rMlGM8w6yKC9OBAG3LhQ40vspUd
+      1RlmtXE3yjUDt+7rdJlKKvqfpSUUp2jGz+5G8ENzZrpduVZKM5Wumud30+1N
+      IXuIZZzUmiyFkvbA0MUQ50LYNrJn92Vy3HW3gFvXyk4HuNecIf5p/4h9u4WV
+      4sPQZqyhSZ7ntpruDntzC96gKi5fCFEcKSwrCEi/EpDw]
+    private: >
+      ENC[PKCS7,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
+      i53K/sbLE2mOghVnZgCr3NPM+9X9PTa6]
   catalin:
     type: ssh-rsa
     public: >

@@ -59,6 +59,11 @@ accounts::accounts:
     authorized_keys:
       - catalin
       - oracle
+  grid:
+    name: grid
+    authorized_keys:
+      - oracle
+      - catalin
   root:
     authorized_keys:
       - root
