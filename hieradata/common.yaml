@@ -42,6 +42,16 @@ accounts::users:
       - asmadmin
       - asmoper
       - vboxsf
+  grid:
+    uid: 502
+    gid: 502
+    groups:
+      - oinstall
+      - asmdba
+      - asmadmin
+      - asmoper
+      - vboxsf
+
 
 accounts::accounts:
   oracle:
