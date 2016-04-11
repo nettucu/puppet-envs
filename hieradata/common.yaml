@@ -46,10 +46,10 @@ accounts::users:
     uid: 502
     gid: 501
     groups:
-      - oinstall
       - asmdba
       - asmadmin
       - asmoper
+      - dba
       - vboxsf
 
 
