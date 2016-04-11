@@ -19,6 +19,8 @@ accounts::groups:
     gid: 501
   dba:
     gid: 502
+  oper:
+    gid: 503
   backupdba:
     gid: 55003
   dgdba:
@@ -36,6 +38,7 @@ accounts::users:
     gid: 501
     groups:
       - dba
+      - oper
       - backupdba
       - dgdba
       - asmdba
