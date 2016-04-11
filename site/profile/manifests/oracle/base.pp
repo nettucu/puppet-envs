@@ -9,4 +9,11 @@ class profile::oracle::base {
     mode    => '0664',
     content => file('profile/oracle/bashrc'),
   }
+  file { '/home/grid/.bashrc':
+    ensure  => present,
+    owner   => 'grid',
+    group   => 'oinstall',
+    mode    => '0664',
+    content => file('profile/oracle/bashrc'),
+  }
 }
