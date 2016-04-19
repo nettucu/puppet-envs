@@ -1,4 +1,4 @@
---
+---
 ora_dld_dir: "/mnt/db/oracle/226-Linux-x86-64/software"
 ora_release_dir: "/mnt/db/oracle/226-Linux-x86-64/software/release"
 ora_dbpsu_dir: "/mnt/db/oracle/226-Linux-x86-64/software/dbpsu"
