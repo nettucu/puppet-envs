@@ -28,7 +28,7 @@ class profile::oracle::rac112 {
     database_type     => 'EE',
     oracle_base       => '/u01/app/oracle',
     oracle_home       => '/u01/app/oracle/product/11.2.0/db_11204',
-    ora_inventory_dir => '/u01/app/oraInventory',
+    ora_inventory_dir => '/u01/app', #oraInventory gets appended
     user              => 'oracle',
     group             => 'dba',
     group_install     => 'oinstall',
@@ -37,5 +37,16 @@ class profile::oracle::rac112 {
     zip_extract       => false,
     remote_file       => false,
     bash_profile      => false,
+  }
+  oradb::opatchupgrade{$title:
+    oracle_home               => $oracle_home,
+    patch_file                => 'p6880880_112000_Linux-x86-64.zip',
+    opversion                 => '11.2.0.3.12',
+    csi_number                => undef,
+    support_id                => undef,
+    user                      => 'oracle',
+    group                     => 'dba',
+    download_dir              => "${ora_oneoffs_dir}/11.2.0.0.0",
+    puppet_download_mnt_point =>  "${ora_oneoffs_dir}/11.2.0.0.0",
   }
 }
