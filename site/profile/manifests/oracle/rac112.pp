@@ -1,7 +1,7 @@
 class profile::oracle::rac112 {
   $ora_release_dir = hiera('ora_release_dir');
   $version = '11.2.0.4';
-  $ora_oneoffs_dir = = hiera('ora_oneoffs_dir');
+  $ora_oneoffs_dir = hiera('ora_oneoffs_dir');
 
   package { 'oracle-rdbms-server-11gR2-preinstall':
     ensure => latest,
