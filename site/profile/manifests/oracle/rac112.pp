@@ -2,6 +2,7 @@ class profile::oracle::rac112 {
   $ora_release_dir = hiera('ora_release_dir');
   $version = '11.2.0.4';
   $ora_oneoffs_dir = hiera('ora_oneoffs_dir');
+  $oracle_home = '/u01/app/oracle/product/11.2.0/db_11204';
 
   package { 'oracle-rdbms-server-11gR2-preinstall':
     ensure => latest,
@@ -28,7 +29,7 @@ class profile::oracle::rac112 {
     version           => '11.2.0.4',
     database_type     => 'EE',
     oracle_base       => '/u01/app/oracle',
-    oracle_home       => '/u01/app/oracle/product/11.2.0/db_11204',
+    oracle_home       => $oracle_home,
     ora_inventory_dir => '/u01/app', #oraInventory gets appended
     user              => 'oracle',
     group             => 'dba',
