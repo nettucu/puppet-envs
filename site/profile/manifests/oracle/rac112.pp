@@ -21,4 +21,20 @@ class profile::oracle::rac112 {
     group  => 'oinstall',
     mode   => '0775',
   }
+  if $::operatingsystemmajrelease >= 7 {
+    # 7.2 doesn't use inittab anymore
+    # 11.2 grid needs ohasd.service separate from inittab
+    file { '/etc/systemd/system/ohasd.service':
+      ensure  => present,
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0664',
+      content => file('profile/etc/systemd/system/ohasd.service'),
+    }
+    service { 'ohasd.service':
+      ensure  => running,
+      enabled => true,
+      require => File['/etc/systemd/system/ohasd.service'],
+    }
+  }
 }
