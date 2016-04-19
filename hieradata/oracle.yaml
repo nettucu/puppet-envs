@@ -1,0 +1,9 @@
+--
+ora_dld_dir: "/mnt/db/oracle/226-Linux-x86-64/software"
+ora_release_dir: "/mnt/db/oracle/226-Linux-x86-64/software/release"
+ora_dbpsu_dir: "/mnt/db/oracle/226-Linux-x86-64/software/dbpsu"
+ora_gipsu_dir: "/mnt/db/oracle/226-Linux-x86-64/software/gipsu"
+ora_oneoffs_dir: "/mnt/db/oracle/226-Linux-x86-64/software/oneoffs"
+ora_db_base: "/u01/app/oracle"
+ora_gi_base: "/u01/app/grid"
+ora_inventory: "/u01/app/oraInventory"
