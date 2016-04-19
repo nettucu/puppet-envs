@@ -33,7 +33,6 @@ class profile::oracle::rac112 {
     }
     service { 'ohasd.service':
       ensure  => running,
-      enabled => true,
       require => File['/etc/systemd/system/ohasd.service'],
     }
   }
