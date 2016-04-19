@@ -16,4 +16,11 @@ class profile::oracle::base {
     mode    => '0664',
     content => file('profile/oracle/bashrc'),
   }
+  file { '/etc/udev/rules.d/99-asm.rules':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0664',
+    content => file('profile/etc/udev/rules.d/99-asm.rules'),
+  }
 }

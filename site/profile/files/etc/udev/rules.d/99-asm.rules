@@ -1,0 +1,3 @@
+KERNEL=="sd*", SUBSYSTEM=="block", ENV{ID_MODEL}=="*.fra1", SYMLINK+="asm-fra1", OWNER="grid", GROUP="asmadmin", MODE="0660"
+KERNEL=="sd*", SUBSYSTEM=="block", ENV{ID_MODEL}=="*.data1", SYMLINK+="asm-data1", OWNER="grid", GROUP="asmadmin", MODE="0660"
+KERNEL=="sd*", SUBSYSTEM=="block", ENV{ID_MODEL}=="*.data2", SYMLINK+="asm-data2", OWNER="grid", GROUP="asmadmin", MODE="0660"
