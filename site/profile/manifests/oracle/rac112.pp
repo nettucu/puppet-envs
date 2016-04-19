@@ -68,7 +68,7 @@ class profile::oracle::rac112 {
 
   oradb::installasm{ '11204_grid':
     version                   => '11.2.0.4',
-    #file                      => hiera('asm_file'),
+    file                      => "${ora_release_dir}/${version}.0/grid",
     grid_type                 => 'CRS_SWONLY', #HA_CONFIG, CRS_SWONLY, ...
     grid_base                 => hiera('ora_gi_base'),
     grid_home                 => $oracle_gi_home,
