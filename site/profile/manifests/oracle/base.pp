@@ -6,7 +6,7 @@ class profile::oracle::base {
     ensure  => present,
     owner   => 'oracle',
     group   => 'oinstall',
-    mode    => '0664',
+    mode    => '0644',
     content => file('profile/oracle/bashrc'),
     require => User['oracle'],
   }
@@ -14,7 +14,7 @@ class profile::oracle::base {
     ensure  => present,
     owner   => 'grid',
     group   => 'oinstall',
-    mode    => '0664',
+    mode    => '0644',
     content => file('profile/oracle/bashrc'),
     require => User['grid'],
   }
@@ -25,6 +25,13 @@ class profile::oracle::base {
     mode    => '0664',
     content => file('profile/etc/udev/rules.d/99-asm.rules'),
   }
+  file { '/home/oracle/.ssh':
+    ensure  => directory,
+    owner   => 'oracle',
+    group   => 'oinstall',
+    mode    => '0700',
+    require => User['oracle'],
+  }
   file { '/home/oracle/.ssh/config':
     ensure  => present,
     owner   => 'oracle',
@@ -32,6 +39,13 @@ class profile::oracle::base {
     mode    => '0600',
     content => file('profile/oracle/sshconfig'),
     require => User['oracle'],
+  }
+  file { '/home/grid/.ssh':
+    ensure  => directory,
+    owner   => 'grid',
+    group   => 'oinstall',
+    mode    => '0700',
+    require => User['grid'],
   }
   file { '/home/grid/.ssh/config':
     ensure  => present,
