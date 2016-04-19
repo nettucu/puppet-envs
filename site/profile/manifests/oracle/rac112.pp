@@ -1,4 +1,7 @@
 class profile::oracle::rac112 {
+  $ora_release_dir = hiera('ora_release_dir');
+  $version = '11.2.0.4';
+
   package { 'oracle-rdbms-server-11gR2-preinstall':
     ensure => latest,
   }
