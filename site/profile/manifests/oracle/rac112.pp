@@ -1,8 +1,8 @@
 class profile::oracle::rac112 {
 
   package { 'oracle-rdbms-server-11gR2-preinstall':
-    ensure => latest,
-    after  => User['oracle'],
+    ensure  => latest,
+    require => User['oracle'],
   }
   file { ['/u01/app', '/u01/app/11.2.0', '/u01/app/11.2.0/grid']:
     ensure  => directory,
