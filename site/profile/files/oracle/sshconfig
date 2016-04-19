@@ -1,0 +1,7 @@
+Host *.local
+  CheckHostIP no
+  GSSAPIAuthentication no
+  StrictHostKeyChecking no
+
+Host *
+  HashKnownHosts no
