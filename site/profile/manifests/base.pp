@@ -13,7 +13,11 @@ class profile::base {
     ensure => latest,
   }
 
-  $services = ['dkms', 'NetworkManager']
+  if $::operatingsystemmajrelease =~ /^7/ {
+    $services = ['dkms', 'NetworkManager']
+  } else {
+    $services = ['dkms_autoinstaller', 'NetworkManager']
+  }
   service { $services:
     ensure  => running,
     require => Package[$packages],
