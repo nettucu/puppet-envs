@@ -1,4 +1,4 @@
-forge "http://forge.puppetlabs.com"
+forge "http://forge.puppet.com"
 
 # Modules from the Puppet Forge
 #/etc/puppetlabs/code/modules
