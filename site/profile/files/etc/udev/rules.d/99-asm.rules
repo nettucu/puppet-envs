@@ -1,3 +1,4 @@
-KERNEL=="sd[b-z]",SUBSYSTEM=="block",ENV{ID_MODEL}=="*.fra1",SYMLINK+="asm-fra1",OWNER="grid",GROUP="asmadmin",MODE="0660"
-KERNEL=="sd[b-z]",SUBSYSTEM=="block",ENV{ID_MODEL}=="*.data1",SYMLINK+="asm-data1",OWNER="grid",GROUP="asmadmin",MODE="0660"
-KERNEL=="sd[b-z]",SUBSYSTEM=="block",ENV{ID_MODEL}=="*.data2",SYMLINK+="asm-data2",OWNER="grid",GROUP="asmadmin",MODE="0660"
+##
+## Generalized rules for ASM full disks
+##
+KERNEL=="sd[b-z]",SUBSYSTEM=="block",ENV{ID_MODEL}=="*.fra*|*.data*",PROGRAM="/etc/udev/scripts/udev_iscsidev.sh %b",SYMLINK+="asm-%c",SYMLINK+="asm/%c",OWNER="grid",GROUP="asmadmin",MODE="0660"

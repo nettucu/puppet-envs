@@ -2,57 +2,47 @@
 # Basic configuration for oracle server
 #
 class profile::oracle::base {
-  file { '/home/oracle/.bashrc':
-    ensure  => present,
-    owner   => 'oracle',
-    group   => 'oinstall',
-    mode    => '0644',
-    content => file('profile/oracle/bashrc'),
-    require => User['oracle'],
+  ['oracle', 'grid'].each | String $user | {
+    file { "/home/$user/.bashrc":
+      ensure  => present,
+      owner   => $user,
+      group   => 'oinstall',
+      mode    => '0644',
+      content => file('profile/oracle/bashrc'),
+      require => User[$user],
+    }
+    file { "/home/$user/.ssh":
+      ensure  => directory,
+      owner   => $user,
+      group   => 'oinstall',
+      mode    => '0700',
+      require => User[$user],
+    }
+    file { "/home/$user/.ssh/config":
+      ensure  => present,
+      owner   => $user,
+      group   => 'oinstall',
+      mode    => '0600',
+      content => file('profile/oracle/sshconfig'),
+      require => User[$user],
+    }
   }
-  file { '/home/grid/.bashrc':
-    ensure  => present,
-    owner   => 'grid',
-    group   => 'oinstall',
-    mode    => '0644',
-    content => file('profile/oracle/bashrc'),
-    require => User['grid'],
+  File {
+    owner => 'root',
+    group => 'root',
   }
   file { '/etc/udev/rules.d/99-asm.rules':
     ensure  => present,
-    owner   => 'root',
-    group   => 'root',
     mode    => '0664',
     content => file('profile/etc/udev/rules.d/99-asm.rules'),
   }
-  file { '/home/oracle/.ssh':
-    ensure  => directory,
-    owner   => 'oracle',
-    group   => 'oinstall',
-    mode    => '0700',
-    require => User['oracle'],
+  file { '/etc/udev/scripts':
+    ensure => directory,
+    mode   => '0755',
   }
-  file { '/home/oracle/.ssh/config':
+  file { '/etc/udev/scripts/udev_iscsidev.sh':
     ensure  => present,
-    owner   => 'oracle',
-    group   => 'oinstall',
-    mode    => '0600',
-    content => file('profile/oracle/sshconfig'),
-    require => User['oracle'],
-  }
-  file { '/home/grid/.ssh':
-    ensure  => directory,
-    owner   => 'grid',
-    group   => 'oinstall',
-    mode    => '0700',
-    require => User['grid'],
-  }
-  file { '/home/grid/.ssh/config':
-    ensure  => present,
-    owner   => 'grid',
-    group   => 'oinstall',
-    mode    => '0600',
-    content => file('profile/oracle/sshconfig'),
-    require => User['grid'],
+    mode    => '0755',
+    content => 'profile/etc/udev/scripts/udev_iscsidev.sh',
   }
 }
