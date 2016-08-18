@@ -43,6 +43,6 @@ class profile::oracle::base {
   file { '/etc/udev/scripts/udev_iscsidev.sh':
     ensure  => present,
     mode    => '0755',
-    content => 'profile/etc/udev/scripts/udev_iscsidev.sh',
+    content => 'file(profile/etc/udev/scripts/udev_iscsidev.sh)',
   }
 }
