@@ -8,14 +8,14 @@ class profile::oracle::rac112 {
     ensure  => directory,
     owner   => 'grid',
     group   => 'oinstall',
-    mode    => '0755',
+    mode    => '0775',
     require => User['grid'],
   }
   file { '/u01/app/oracle':
     ensure  => directory,
     owner   => 'oracle',
     group   => 'oinstall',
-    mode    => '0755',
+    mode    => '0775',
     require => User['oracle'],
   }
   file { '/u01/app/oraInventory':

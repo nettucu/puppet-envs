@@ -31,6 +31,8 @@ accounts::groups:
     gid: 55006
   asmoper:
     gid: 55007
+  kmdba:
+    gid: 55008
 
 accounts::users:
   oracle:
@@ -38,23 +40,15 @@ accounts::users:
     gid: 501
     groups:
       - dba
-      - oper
-      - backupdba
-      - dgdba
       - asmdba
-      - asmadmin
-      - asmoper
       - vboxsf
   grid:
     uid: 502
     gid: 501
     groups:
-      - asmdba
       - asmadmin
-      - asmoper
-      - dba
+      - asmdba
       - vboxsf
-
 
 accounts::accounts:
   oracle:
@@ -71,4 +65,3 @@ accounts::accounts:
     authorized_keys:
       - root
       - catalin
-
