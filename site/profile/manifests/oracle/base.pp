@@ -45,4 +45,10 @@ class profile::oracle::base {
     mode    => '0755',
     content => file('profile/etc/udev/scripts/udev_iscsidev.sh'),
   }
+  file { '/etc/oraInst.loc':
+    ensure  => present,
+    mode    => '0644',
+    content => file('profile/etc/oraInst.loc'),
+    replace => false,
+  }
 }
