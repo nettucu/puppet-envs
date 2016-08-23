@@ -4,26 +4,33 @@ class profile::oracle::rac112 {
     ensure  => latest,
     require => User['oracle'],
   }
-  file { ['/u01/app', '/u01/app/11.2.0', '/u01/app/11.2.0/grid']:
-    ensure  => directory,
-    owner   => 'grid',
-    group   => 'oinstall',
-    mode    => '0775',
-    require => User['grid'],
-  }
-  file { '/u01/app/oracle':
-    ensure  => directory,
-    owner   => 'oracle',
-    group   => 'oinstall',
-    mode    => '0775',
-    require => User['oracle'],
-  }
-  file { '/u01/app/oraInventory':
-    ensure  => directory,
-    owner   => 'grid',
-    group   => 'oinstall',
-    mode    => '0775',
-    require => User['grid'],
+  # file { ['/u01/app', '/u01/app/11.2.0', '/u01/app/11.2.0/grid']:
+    # ensure  => directory,
+    # owner   => 'grid',
+    # group   => 'oinstall',
+    # mode    => '0775',
+    # require => User['grid'],
+  # }
+  # file { '/u01/app/oracle':
+    # ensure  => directory,
+    # owner   => 'oracle',
+    # group   => 'oinstall',
+    # mode    => '0775',
+    # require => User['oracle'],
+  # }
+  # file { '/u01/app/oraInventory':
+    # ensure  => directory,
+    # owner   => 'grid',
+    # group   => 'oinstall',
+    # mode    => '0775',
+    # require => User['grid'],
+  # }
+  oradb::db_directory_structure { '/u01/app/grid':
+    oracle_base_dir => '/u01/app/grid',
+    ora_inventory   => '/u01/app/oraInventory',
+    download_folder => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
+    user            => 'grid',
+    group           => 'oinstall',
   }
   if $::operatingsystemmajrelease =~ /^7/ {
     # 7.2 doesn't use inittab anymore
