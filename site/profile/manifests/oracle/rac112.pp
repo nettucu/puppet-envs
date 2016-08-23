@@ -35,6 +35,7 @@ class profile::oracle::rac112 {
       download_dir      => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
       os_user           => $user,
       os_group          => 'oinstall',
+      require           => User[$user],
     }
   }
   if $::operatingsystemmajrelease =~ /^7/ {
