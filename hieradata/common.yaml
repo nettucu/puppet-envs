@@ -40,6 +40,7 @@ accounts::users:
     gid: 501
     groups:
       - dba
+      - oper
       - asmdba
       - vboxsf
   grid:
@@ -48,6 +49,7 @@ accounts::users:
     groups:
       - asmadmin
       - asmdba
+      - asmoper
       - vboxsf
 
 accounts::accounts:
