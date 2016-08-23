@@ -1,4 +1,6 @@
+include ::oradb
 class profile::oracle::rac112 {
+  #  include ::oradb
 
   package { 'oracle-rdbms-server-11gR2-preinstall':
     ensure  => latest,
