@@ -27,6 +27,7 @@ class profile::oracle::rac112 {
     # mode    => '0775',
     # require => User['grid'],
   # }
+  notify { "creating base directories for GRID": withpath => true }
   db_directory_structure { '/u01/app/grid':
     oracle_base_dir    => '/u01/app/grid',
     ora_inventory_dir  => '/u01/app/oraInventory',
@@ -34,6 +35,7 @@ class profile::oracle::rac112 {
     os_user            => 'grid',
     os_group           => 'oinstall',
   }
+  notify { "creating base directories for DATABASE": withpath => true }
   db_directory_structure { '/u01/app/oracle':
     oracle_base_dir   => '/u01/app/oracle',
     ora_inventory_dir => '/u01/app/oraInventory',
