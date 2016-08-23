@@ -28,18 +28,18 @@ class profile::oracle::rac112 {
     # require => User['grid'],
   # }
   db_directory_structure { '/u01/app/grid':
-    oracle_base_dir => '/u01/app/grid',
-    ora_inventory   => '/u01/app/oraInventory',
-    download_folder => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
-    user            => 'grid',
-    group           => 'oinstall',
+    oracle_base_dir    => '/u01/app/grid',
+    ora_inventory_dir  => '/u01/app/oraInventory',
+    download_folder    => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
+    os_user            => 'grid',
+    os_group           => 'oinstall',
   }
   db_directory_structure { '/u01/app/oracle':
-    oracle_base_dir => '/u01/app/oracle',
-    ora_inventory   => '/u01/app/oraInventory',
-    download_folder => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
-    user            => 'oracle',
-    group           => 'oinstall',
+    oracle_base_dir   => '/u01/app/oracle',
+    ora_inventory_dir => '/u01/app/oraInventory',
+    download_folder   => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
+    os_user           => 'oracle',
+    os_group          => 'oinstall',
   }
   if $::operatingsystemmajrelease =~ /^7/ {
     # 7.2 doesn't use inittab anymore
