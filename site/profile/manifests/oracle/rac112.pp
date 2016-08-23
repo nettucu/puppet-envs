@@ -55,7 +55,7 @@ class profile::oracle::rac112 {
     sys_asm_password          => 'oracle',
     asm_monitor_password      => 'oracle',
     asm_diskgroup             => 'DATA',
-    asm_discovery_string      => '/dev/asm/*.data*',
+    disk_discovery_string      => '/dev/asm/*.data*',
     disks                     => '/dev/asm/ol6-crs112.data-lun-0,/dev/asm/ol6-crs112.data-lun-1',
     disk_redundancy           => 'EXTERNAL',
     download_dir              => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
