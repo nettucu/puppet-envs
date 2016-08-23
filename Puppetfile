@@ -49,7 +49,7 @@ mod "puppetlabs/ntp"
 #  :ref => 'feature/debian_support'
 mod 'oradb',
   :git => 'https://github.com/biemond/biemond-oradb.git',
-  :branch => puppet4_3_data
+  :branch => 'puppet4_3_data'
 
 mod 'accounts',
   :git => 'git@github.com:nettucu/puppet-accounts.git'
