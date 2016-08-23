@@ -37,7 +37,7 @@ mod "puppetlabs/inifile"
 mod "hajee/ora_rac"
 mod "hajee/easy_type"
 mod "hajee/oracle"
-mod "biemond/oradb"
+#mod "biemond/oradb"
 
 mod "zack/r10k"
 
@@ -47,6 +47,9 @@ mod "puppetlabs/ntp"
 #mod 'redis',
 #  :git => 'git://github.com/glarizza/puppet-redis',
 #  :ref => 'feature/debian_support'
+mod 'oradb',
+  :git => 'https://github.com/biemond/biemond-oradb.git',
+  :branch => puppet4_3_data
 
 mod 'accounts',
   :git => 'git@github.com:nettucu/puppet-accounts.git'
