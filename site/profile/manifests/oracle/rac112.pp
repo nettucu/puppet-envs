@@ -27,14 +27,14 @@ class profile::oracle::rac112 {
     # mode    => '0775',
     # require => User['grid'],
   # }
-  oradb::db_directory_structure { '/u01/app/grid':
+  db_directory_structure { '/u01/app/grid':
     oracle_base_dir => '/u01/app/grid',
     ora_inventory   => '/u01/app/oraInventory',
     download_folder => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
     user            => 'grid',
     group           => 'oinstall',
   }
-  oradb::db_directory_structure { '/u01/app/oracle':
+  db_directory_structure { '/u01/app/oracle':
     oracle_base_dir => '/u01/app/oracle',
     ora_inventory   => '/u01/app/oraInventory',
     download_folder => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
