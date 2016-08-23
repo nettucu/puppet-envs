@@ -59,6 +59,7 @@ class profile::oracle::rac112 {
     disks                     => '/dev/asm/ol6-crs112.data-lun-0,/dev/asm/ol6-crs112.data-lun-1',
     disk_redundancy           => 'EXTERNAL',
     download_dir              => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
+    puppet_download_mnt_point => '/mnt/db/oracle/226-Linux-x86-64/software/release/11.2.0.4.0',
     remote_file               => false,
     zip_extract               => false,
   }
