@@ -40,7 +40,7 @@ class profile::oracle::rac112 {
   }
   oradb::installasm { 'asm_linux_11204':
     version                   => '11.2.0.4',
-    file                      => 'grid',
+    file                      => '',
     grid_type                 => 'CRS_SWONLY',
     grid_base                 => '/u01/app/grid',
     grid_home                 => '/u01/app/11.2.0/grid',
