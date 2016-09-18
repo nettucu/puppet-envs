@@ -3,7 +3,7 @@
 log() {
   msg="${1}"
   lvl=${2:-"debug"}
-  logger -p user.${lvl} "iscsidev.sh - ${msg}"
+  logger "iscsidev.sh - ${msg}"
 }
 
 #{{{ BUS is available
