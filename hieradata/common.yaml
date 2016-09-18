@@ -39,6 +39,7 @@ accounts::users:
     uid: 501
     gid: 501
     groups:
+      - users
       - dba
       - oper
       - asmdba
@@ -46,6 +47,7 @@ accounts::users:
     uid: 502
     gid: 501
     groups:
+      - users
       - asmadmin
       - asmdba
       - asmoper
