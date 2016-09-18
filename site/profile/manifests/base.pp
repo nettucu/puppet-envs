@@ -22,8 +22,7 @@ class profile::base {
     ensure  => running,
     require => Package[$packages],
   }
-
-  file { '/mnt/db':
+  file { ['/mnt/db','/mnt/sqlscripts','/mnt/scripts']:
     ensure => directory,
     mode   => '0755',
   }
@@ -39,13 +38,40 @@ class profile::base {
     '/stage':
       target  => '/mnt/db/stage',
       ensure  => link,
-      require => Mount['/mnt/db'];
-    '/opt/scripts':
-      ensure => link,
-      target => '/media/sf_scripts';
-    '/opt/sqlscripts':
-      ensure => link,
-      target => '/media/sf_sqlscripts';
+      require => Mount['/mnt/db'],
+  }
+  if ($::virtual == 'kvm') {
+    ['scripts','sqlscripts'].each | String $s | {
+      mount { "/mnt/$s":
+        ensure  => mounted,
+        atboot  => true,
+        fstype  => 'nfs4',
+        options => '_netdev,rsize=32768,wsize=32768,timeo=300',
+        device  => "storage:/$s",
+        require => File["/mnt/$s"],
+      }
+      file { "/opt/$s":
+        ensure  => link,
+        target  => "/mnt/$s",
+        require => Mount["/mnt/$s"],
+      }
+    }
+  } else {
+    ['scripts','sqlscripts'].each | String $s | {
+      mount { "/mnt/$s":
+        ensure  => mounted,
+        atboot  => true,
+        fstype  => 'nfs4',
+        options => '_netdev,rsize=32768,wsize=32768,timeo=300',
+        device  => "storage:/$s",
+        require => File["/mnt/$s"],
+      }
+      file { "/opt/$s":
+        ensure  => link,
+        target  => "/mnt/sf_$s",
+        require => Mount["/mnt/$s"],
+      }
+    }
   }
   file { '/etc/profile.d/path-scripts.sh':
     ensure  => present,
