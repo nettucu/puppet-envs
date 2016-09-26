@@ -12,6 +12,7 @@ class profile::base {
   if($::virtual == 'kvm') {
     concat($packages, 'qemu-guest-agent')
   }
+  notice($packages)
   package { $packages:
     ensure => latest,
   }
