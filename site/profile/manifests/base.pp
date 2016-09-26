@@ -4,13 +4,15 @@ class profile::base {
 
   #include loopback
 
-  $packages = [
+  $base_packages = [
     'vim','rlwrap','sudo','screen','git','strace','gdb','bash-completion',
     'ksh','gcc','zsh','wget','curl','htop','colordiff','pv','tree','diffutils','lshw','yum-utils',
     'elfutils-libelf-devel', 'dkms'
   ]
   if($::virtual == 'kvm') {
-    $packages = concat($packages, 'qemu-guest-agent')
+    $packages = concat($base_packages, 'qemu-guest-agent')
+  } else {
+    $packages = $base_packages
   }
   notice($packages)
   package { $packages:
