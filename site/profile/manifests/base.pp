@@ -10,7 +10,7 @@ class profile::base {
     'elfutils-libelf-devel', 'dkms'
   ]
   if($::virtual == 'kvm') {
-    concat($packages, 'qemu-guest-agent')
+    $packages = concat($packages, 'qemu-guest-agent')
   }
   notice($packages)
   package { $packages:
