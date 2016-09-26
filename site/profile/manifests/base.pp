@@ -9,6 +9,9 @@ class profile::base {
     'ksh','gcc','zsh','wget','curl','htop','colordiff','pv','tree','diffutils','lshw','yum-utils',
     'elfutils-libelf-devel', 'dkms'
   ]
+  if($::virtual == 'kvm') {
+    concat($packages, 'qemu-guest-agent')
+  }
   package { $packages:
     ensure => latest,
   }
