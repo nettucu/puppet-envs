@@ -1,9 +1,10 @@
-class profile::base_linux {
+class profile::base_Linux {
   class { '::ntp': }
   include accounts
 
   #include loopback
-  notice($::os[family])
+  notice($::os)
+  notice($::kernel)
 
   $base_packages = [
     'vim','rlwrap','sudo','screen','git','strace','gdb','bash-completion',
