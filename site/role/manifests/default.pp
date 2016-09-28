@@ -1,3 +1,3 @@
 class role::default {
-  include profile::base
+  include "profile::base_$::os[family]"
 }
