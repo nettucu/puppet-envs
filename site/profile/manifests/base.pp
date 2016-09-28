@@ -3,6 +3,7 @@ class profile::base {
   include accounts
 
   #include loopback
+  notice($::os[family])
 
   $base_packages = [
     'vim','rlwrap','sudo','screen','git','strace','gdb','bash-completion',
