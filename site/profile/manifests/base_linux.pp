@@ -1,4 +1,4 @@
-class profile::base_Linux {
+class profile::base_linux {
   class { '::ntp': }
   include accounts
 
