@@ -11,12 +11,13 @@ class profile::base_sunos {
     mode   => '0755',
   }
   mount { '/mnt/db':
-    ensure  => mounted,
-    atboot  => true,
-    fstype  => 'nfs4',
-    options => '_netdev,rsize=32768,wsize=32768,timeo=300',
-    device  => 'storage:/multimedia/dlds/db',
-    require => File['/mnt/db'],
+    ensure      => mounted,
+    atboot      => true,
+    fstype      => 'nfs4',
+    options     => '_netdev,rsize=32768,wsize=32768,timeo=300',
+    device      => 'storage:/multimedia/dlds/db',
+    blockdevice => "-",
+    require     => File['/mnt/db'],
   }
   file {
     '/stage':
@@ -26,12 +27,13 @@ class profile::base_sunos {
   }
   ['scripts','sqlscripts'].each | String $s | {
     mount { "/mnt/$s":
-      ensure  => mounted,
-      atboot  => true,
-      fstype  => 'nfs4',
-      options => '_netdev,rsize=32768,wsize=32768,timeo=300',
-      device  => "storage:/$s",
-      require => File["/mnt/$s"],
+      ensure      => mounted,
+      atboot      => true,
+      fstype      => 'nfs4',
+      options     => '_netdev,rsize=32768,wsize=32768,timeo=300',
+      device      => "storage:/$s",
+      blockdevice => "-",
+      require     => File["/mnt/$s"],
     }
     file { "/opt/$s":
       ensure  => link,
