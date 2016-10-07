@@ -6,33 +6,21 @@ class profile::base_sunos {
   notice($::os)
   notice($::kernel)
 
-  file { ['/mnt/db','/mnt/sqlscripts','/mnt/scripts']:
-    ensure => directory,
-    mode   => '0755',
-  }
-  mount { '/mnt/db':
-    ensure      => mounted,
-    atboot      => true,
-    fstype      => 'nfs4',
-    options     => '_netdev,rsize=32768,wsize=32768,timeo=300',
-    device      => 'storage:/multimedia/dlds/db',
-    blockdevice => "-",
-    require     => File['/mnt/db'],
-  }
-  file {
-    '/stage':
-      target  => '/mnt/db/stage',
-      ensure  => link,
-      require => Mount['/mnt/db'],
-  }
-  ['scripts','sqlscripts'].each | String $s | {
+  ['db','scripts','sqlscripts'].each | String $s | {
+    file { "/mnt/$s":
+      ensure => directory,
+      mode   => '0755',
+    }
     mount { "/mnt/$s":
       ensure      => mounted,
       atboot      => true,
-      fstype      => 'nfs4',
-      options     => '_netdev,rsize=32768,wsize=32768,timeo=300',
-      device      => "storage:/$s",
-      blockdevice => "-",
+      fstype      => 'nfs',
+      options     => 'vers=4,hard,timeo=300',
+      blockdevice => '-',
+      device      => $s ? {
+        db        => 'storage:/multimedia/dlds/db',
+        default   => "storage:/$s",
+      },
       require     => File["/mnt/$s"],
     }
     file { "/opt/$s":
@@ -41,4 +29,46 @@ class profile::base_sunos {
       require => Mount["/mnt/$s"],
     }
   }
+
+  file { '/stage':
+    target  => '/mnt/db/stage',
+    ensure  => link,
+    require => Mount['/mnt/db'],
+  }
+
+  #  file { ['/mnt/db','/mnt/sqlscripts','/mnt/scripts']:
+  #    ensure => directory,
+  #    mode   => '0755',
+  #  }
+  #  mount { '/mnt/db':
+  #    ensure      => mounted,
+  #    atboot      => true,
+  #    fstype      => 'nfs',
+  #    options     => 'vers=4,hard,timeo=300',
+  #    device      => 'storage:/multimedia/dlds/db',
+  #    blockdevice => "-",
+  #    require     => File['/mnt/db'],
+  #  }
+  #  file {
+  #    '/stage':
+  #      target  => '/mnt/db/stage',
+  #      ensure  => link,
+  #      require => Mount['/mnt/db'],
+  #  }
+  #  ['scripts','sqlscripts'].each | String $s | {
+  #    mount { "/mnt/$s":
+  #      ensure      => mounted,
+  #      atboot      => true,
+  #      fstype      => 'nfs',
+  #      options     => 'vers=4,hard,timeo=300',
+  #      device      => "storage:/$s",
+  #      blockdevice => "-",
+  #      require     => File["/mnt/$s"],
+  #    }
+  #    file { "/opt/$s":
+  #      ensure  => link,
+  #      target  => "/mnt/$s",
+  #      require => Mount["/mnt/$s"],
+  #    }
+  #  }
 }
