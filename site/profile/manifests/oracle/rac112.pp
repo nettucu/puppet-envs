@@ -6,7 +6,7 @@ class profile::oracle::rac112 {
     ensure  => latest,
     require => User['oracle'],
   }
-  file { ['/u01/app', '/u01/app/11.2.0', '/u01/app/11.2.0/grid']:
+  file { ['/u01', '/u01/app', '/u01/app/11.2.0', '/u01/app/11.2.0/grid']:
     ensure  => directory,
     owner   => 'grid',
     group   => 'oinstall',
