@@ -52,4 +52,6 @@ log "ID_PATH=${ID_PATH}"
 
 tgt_name=${ID_PATH##*:}
 
+log "tgt_name=${tgt_name}"
+
 echo ${tgt_name}

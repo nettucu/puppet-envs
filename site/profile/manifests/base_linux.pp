@@ -9,7 +9,7 @@ class profile::base_linux {
   $base_packages = [
     'vim','rlwrap','sudo','screen','git','strace','gdb','bash-completion',
     'ksh','gcc','zsh','wget','curl','htop','colordiff','pv','tree','diffutils','lshw','yum-utils',
-    'elfutils-libelf-devel', 'dkms'
+    'elfutils-libelf-devel', 'dkms','tigervnc-server','xterm'
   ]
   if($::virtual == 'kvm') {
     $packages = concat($base_packages, 'qemu-guest-agent')
