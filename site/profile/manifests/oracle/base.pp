@@ -27,6 +27,13 @@ class profile::oracle::base {
       require => User[$user],
     }
   }
+  file { '/root/.bashrc':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0664',
+    content => file('profile/oracle/bashrc'),
+  }
   File {
     owner => 'root',
     group => 'root',

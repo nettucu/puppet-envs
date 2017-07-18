@@ -5,6 +5,12 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+export RED="$( tput setaf 1 )"
+export GREEN="$( tput setaf 2 )"
+export YELLOW="$( tput setaf 3 )"
+export CYAN="$( tput setaf 6 )"
+export NC="$( tput sgr0 )"
+
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
@@ -36,12 +42,17 @@ alias histupd="history -n"
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-alias sqlplus='rlwrap sqlplus'
-alias rman='rlwrap rman'
-alias asmcmd='rlwrap asmcmd'
-alias adrci='rlwrap adrci'
-alias dgmgrl='rlwrap dgmgrl'
+which rlwrap >/dev/null 2>&1 && {
+  alias sqlplus='rlwrap sqlplus'
+  alias rman='rlwrap rman'
+  alias asmcmd='rlwrap asmcmd'
+  alias adrci='rlwrap adrci'
+  alias dgmgrl='rlwrap dgmgrl'
+}
 
-#export PS1='[$ORACLE_SID:$( basename $ORACLE_HOME )][\u@\h \W]$ '
-
-export PS1='[${ORACLE_SID:-"X"}:$( basename ${ORACLE_HOME:-"X"})]\[\033[1;33m\]\u@\h\[\033[1;34m\]:\[\033[1;33m\]\w\[\033[0m\]\[\033[1;33m\]\$\[\033[0m\] '
+export PS1='[${ORACLE_SID:-"X"}:$( basename ${ORACLE_HOME:-"X"})]${YELLOW}\u@\h:\w$ ${NC}'
+if [[ ${USER} = grid ]]; then
+  export PS1='[${ORACLE_SID:-"X"}:$( basename ${ORACLE_HOME:-"X"})]${CYAN}\u@\h:\w$ ${NC}'
+elif [[ ${USER} = root ]]; then
+  export PS1='[${ORACLE_SID:-"X"}:$( basename ${ORACLE_HOME:-"X"})]${RED}\u@\h:\w# ${NC}'
+fi
