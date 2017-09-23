@@ -5,11 +5,14 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
-export RED="$( tput setaf 1 )"
-export GREEN="$( tput setaf 2 )"
-export YELLOW="$( tput setaf 3 )"
-export CYAN="$( tput setaf 6 )"
-export NC="$( tput sgr0 )"
+# export colors only if interactive
+if [[ "${-}" = *i* ]]; then
+  export RED="$( tput setaf 1 )"
+  export GREEN="$( tput setaf 2 )"
+  export YELLOW="$( tput setaf 3 )"
+  export CYAN="$( tput setaf 6 )"
+  export NC="$( tput sgr0 )"
+fi
 
 alias ls='ls --color=auto'
 alias ll='ls -l'
