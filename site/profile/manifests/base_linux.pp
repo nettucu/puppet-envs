@@ -54,7 +54,7 @@ class profile::base_linux {
         ensure  => mounted,
         atboot  => true,
         fstype  => 'nfs4',
-        options => '_netdev,rsize=32768,wsize=32768,timeo=300',
+        options => '_netdev,noatime,rsize=32768,wsize=32768,timeo=300',
         device  => "storage:/$s",
         require => File["/mnt/$s"],
       }
