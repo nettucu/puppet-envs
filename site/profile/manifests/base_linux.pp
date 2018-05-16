@@ -38,7 +38,7 @@ class profile::base_linux {
     ensure  => mounted,
     atboot  => true,
     fstype  => 'nfs4',
-    options => '_netdev,rsize=32768,wsize=32768,timeo=300',
+    options => '_netdev,async,rsize=32768,wsize=32768,timeo=300',
     device  => 'storage:/multimedia/dlds/db',
     require => File['/mnt/db'],
   }
