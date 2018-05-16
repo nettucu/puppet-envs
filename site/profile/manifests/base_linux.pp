@@ -55,7 +55,7 @@ class profile::base_linux {
         atboot  => true,
         fstype  => 'nfs4',
         options => '_netdev,noatime,rsize=32768,wsize=32768,timeo=300',
-        device  => "storage:/$s",
+        device  => "storage:/export/$s",
         require => File["/mnt/$s"],
       }
       file { "/opt/$s":
