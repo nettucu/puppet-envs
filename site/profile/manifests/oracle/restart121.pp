@@ -13,7 +13,7 @@ class profile::oracle::restart121 {
     mode    => '0775',
     require => User['grid'],
   }
-  file { '/u01/app/oracle':
+  file { ['/u01/app/oracle', '/u01/app/oracle/product']:
     ensure  => directory,
     owner   => 'oracle',
     group   => 'oinstall',
