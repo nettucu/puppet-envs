@@ -48,6 +48,7 @@ accounts::users:
     gid: 501
     groups:
       - users
+      - dba
       - asmadmin
       - asmdba
       - asmoper
