@@ -33,6 +33,8 @@ accounts::groups:
     gid: 55007
   kmdba:
     gid: 55008
+  racdba:
+    gid: 55009
 
 accounts::users:
   oracle:
@@ -43,6 +45,10 @@ accounts::users:
       - dba
       - oper
       - asmdba
+      - backupdba
+      - dgdba
+      - kmdba
+      - racdba
   grid:
     uid: 502
     gid: 501
@@ -52,6 +58,7 @@ accounts::users:
       - asmadmin
       - asmdba
       - asmoper
+      - racdba
 
 accounts::accounts:
   oracle:
