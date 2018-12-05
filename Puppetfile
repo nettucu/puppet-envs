@@ -37,7 +37,7 @@ mod "puppetlabs/inifile"
 mod "hajee/ora_rac"
 mod "hajee/easy_type"
 mod "hajee/oracle"
-mod "biemond/oradb", 3.0.18
+mod "biemond/oradb"
 
 mod "zack/r10k"
 
