@@ -38,7 +38,10 @@ mod "puppetlabs/inifile"
 #mod "hajee/easy_type"
 #mod "hajee/oracle"
 #mod "biemond/oradb"
+mod 'enterprisemodules-easy_type'
+mod 'enterprisemodule-ora_install'
 mod 'enterprisemodules-ora_config'
+mod 'enterprisemodules-ora_profile'
 
 mod "zack/r10k"
 
