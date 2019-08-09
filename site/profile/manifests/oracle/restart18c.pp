@@ -1,6 +1,6 @@
-include ::oradb
+#include ::oradb
 class profile::oracle::restart18c {
-  #  include ::oradb
+  include ::oradb
 
   package { 'oracle-database-preinstall-18c':
     ensure  => latest,
