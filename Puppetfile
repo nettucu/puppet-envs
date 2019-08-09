@@ -34,10 +34,11 @@ mod "gentoo/portage"
 mod "puppetlabs/git"
 mod "puppetlabs/inifile"
 
-mod "hajee/ora_rac"
-mod "hajee/easy_type"
-mod "hajee/oracle"
-mod "biemond/oradb"
+#mod "hajee/ora_rac"
+#mod "hajee/easy_type"
+#mod "hajee/oracle"
+#mod "biemond/oradb"
+mod 'enterprisemodules-ora_config'
 
 mod "zack/r10k"
 
