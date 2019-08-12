@@ -15,6 +15,8 @@ mod 'ipcrm/echo'
 mod 'puppetlabs/powershell'
 mod 'puppet/archive'
 mod 'puppetlabs/firewall'
+mod 'puppetlabs/translate'
+mod 'crayfishx/firewalld'
 
 #mod "hajee/ora_rac"
 #mod "hajee/easy_type"
@@ -28,6 +30,7 @@ mod 'enterprisemodules-ora_install'
 mod 'enterprisemodules-ora_config'
 mod 'enterprisemodules-ora_profile'
 mod 'enterprisemodules-ora_cis'
+mod 'enterprisemodules/partition'
 
 mod "puppet/r10k"
 
