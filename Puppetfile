@@ -35,8 +35,9 @@ mod "puppetlabs/git"
 mod "puppetlabs/inifile"
 mod 'saz/limits'
 mod 'ipcrm/echo'
-mod 'puppetlabs/powershel'
-mod 'puppetlabs/archive'
+mod 'puppetlabs/powershell'
+mod 'puppet/archive'
+mod 'puppetlabsr/firewall'
 
 #mod "hajee/ora_rac"
 #mod "hajee/easy_type"
