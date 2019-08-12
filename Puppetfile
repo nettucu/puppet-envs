@@ -33,7 +33,8 @@ mod "puppetlabs/vcsrepo"
 mod "gentoo/portage"
 mod "puppetlabs/git"
 mod "puppetlabs/inifile"
-mod 'puppetlabs/saz-limits'
+mod 'saz/limits'
+mod 'ipcrm/echo'
 mod 'puppetlabs/powershel'
 mod 'puppetlabs/archive'
 
@@ -41,9 +42,9 @@ mod 'puppetlabs/archive'
 #mod "hajee/easy_type"
 #mod "hajee/oracle"
 #mod "biemond/oradb"
-mod 'enterprisemodules-herculesteam-augeasproviders_core'
-mod 'enterprisemodules-herculesteam-augeasproviders_shellvar'
-mod 'enterprisemodules-herculesteam-augeasproviders_sysctl'
+mod 'herculesteam/augeasproviders_core'
+mod 'herculesteam/augeasproviders_shellvar'
+mod 'herculesteam/augeasproviders_sysctl'
 mod 'enterprisemodules-easy_type'
 mod 'enterprisemodules-ora_install'
 mod 'enterprisemodules-ora_config'
