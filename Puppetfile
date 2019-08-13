@@ -1,6 +1,6 @@
 forge "http://forge.puppet.com"
 
-mod 'puppetlabs/stdlib',  '5.2.0'
+mod 'puppetlabs/stdlib',  '4.25'
 mod 'puppetlabs/concat', '4.2.1'
 mod 'puppetlabs/pe_gem'
 mod 'puppetlabs/ruby'
