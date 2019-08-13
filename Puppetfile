@@ -1,7 +1,7 @@
 forge "http://forge.puppet.com"
 
-mod 'puppetlabs/stdlib',  '4.25.1'
-mod 'puppetlabs/concat'
+mod 'puppetlabs/stdlib',  '5.2.0'
+mod 'puppetlabs/concat', '4.2.1'
 mod 'puppetlabs/pe_gem'
 mod 'puppetlabs/ruby'
 mod 'puppetlabs/gcc'
@@ -13,7 +13,7 @@ mod 'puppetlabs/inifile'
 mod 'saz/limits'
 mod 'ipcrm/echo'
 mod 'puppetlabs/powershell'
-mod 'puppet/archive'
+mod 'puppet/archive', '3.2.1'
 mod 'puppetlabs/firewall', '1.15.3'
 mod 'puppetlabs/translate'
 mod 'crayfishx/firewalld'
