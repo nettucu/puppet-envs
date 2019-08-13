@@ -2,6 +2,7 @@
 classes:
   - role::restart122
 
+ora_profile::database:version: '12.2.0.1'
 ora_profile::database::groups_and_users: skip
 ora_profile::database::limits: skip
 ora_profile::database::firewall: skip
