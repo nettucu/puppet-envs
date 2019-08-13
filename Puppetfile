@@ -14,7 +14,7 @@ mod 'saz/limits'
 mod 'ipcrm/echo'
 mod 'puppetlabs/powershell'
 mod 'puppet/archive'
-mod 'puppetlabs/firewall'
+mod 'puppetlabs/firewall', '1.15.3'
 mod 'puppetlabs/translate'
 mod 'crayfishx/firewalld'
 
