@@ -5,3 +5,4 @@ classes:
 ora_profile::database::groups_and_users: skip
 ora_profile::database::limits: skip
 ora_profile::database::firewall: skip
+ora_profile::database::packages: skip
