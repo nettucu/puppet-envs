@@ -1,15 +1,15 @@
 forge "http://forge.puppet.com"
 
-mod "puppetlabs/stdlib"
-mod "puppetlabs/concat"
-mod "puppetlabs/pe_gem"
-mod "puppetlabs/ruby"
-mod "puppetlabs/gcc"
-mod "croddy/make"
-mod "puppetlabs/vcsrepo"
-mod "gentoo/portage"
-mod "puppetlabs/git"
-mod "puppetlabs/inifile"
+mod 'puppetlabs/stdlib',  '4.25.1'
+mod 'puppetlabs/concat'
+mod 'puppetlabs/pe_gem'
+mod 'puppetlabs/ruby'
+mod 'puppetlabs/gcc'
+mod 'croddy/make'
+mod 'puppetlabs/vcsrepo'
+mod 'gentoo/portage'
+mod 'puppetlabs/git'
+mod 'puppetlabs/inifile'
 mod 'saz/limits'
 mod 'ipcrm/echo'
 mod 'puppetlabs/powershell'
