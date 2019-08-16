@@ -21,7 +21,7 @@ mod 'crayfishx/firewalld', '3.4.0'
 #mod "hajee/ora_rac"
 #mod "hajee/easy_type"
 #mod "hajee/oracle"
-#mod "biemond/oradb"
+mod "biemond/oradb"
 
 mod 'herculesteam/augeasproviders_core', '2.5.0'
 mod 'herculesteam/augeasproviders_shellvar'

@@ -2,13 +2,13 @@
 classes:
   - role::restart122
 
-ora_profile::database::version:              12.2.0.1
-ora_profile::database::groups_and_users:     skip
-ora_profile::database::limits:               skip
-ora_profile::database::firewall:             skip
-ora_profile::database::packages:             skip
-ora_profile::database::db_patches:           skip
-ora_profile::database::ora_inventory_dir:    /u01/app/oraInventory
-ora_profile::database::grid_base:            /u01/app/grid
+    #ora_profile::database::version:              12.2.0.1
+    #ora_profile::database::groups_and_users:     skip
+    #ora_profile::database::limits:               skip
+    #ora_profile::database::firewall:             skip
+    #ora_profile::database::packages:             skip
+    #ora_profile::database::db_patches:           skip
+    #ora_profile::database::ora_inventory_dir:    /u01/app/oraInventory
+    #ora_profile::database::grid_base:            /u01/app/grid
 
-ora_profile::database::asm_software::grid_type: SW_ONLY
+    #ora_profile::database::asm_software::grid_type: SW_ONLY

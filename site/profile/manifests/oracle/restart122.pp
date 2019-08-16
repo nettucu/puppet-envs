@@ -26,5 +26,16 @@ class profile::oracle::restart122 {
     require => User['grid'],
   }
 
-  include ora_profile::database
+  include ::oradb
+  #include ora_profile::database
+  oradb::installdb {'12.2.0.1_Linux-x86-64':
+    version       =>  '12.2.0.1',
+    file          =>  'linuxx64_12201_database',
+    database_type =>  'EE',
+    oracle_base   =>  '/u01/app/oracle',
+    oracle_home   =>  '/u01/app/oracle/product/12.2.0.1/db_122',
+    bash_profile  =>  false,
+    download_dir  =>  '/mnt/db/oracle/226-Linux-x86-64/software/release/12.2.0.1.0',
+    zip_extract   =>  true,
+  }
 }
