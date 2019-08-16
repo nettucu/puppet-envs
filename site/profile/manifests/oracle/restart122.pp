@@ -35,7 +35,7 @@ class profile::oracle::restart122 {
     oracle_base   =>  '/u01/app/oracle',
     oracle_home   =>  '/u01/app/oracle/product/12.2.0.1/db_122',
     bash_profile  =>  false,
-    source        =>  '/mnt/db/oracle/226-Linux-x86-64/software/release/12.2.0.1.0',
+    download_dir  =>  '/mnt/db/oracle/226-Linux-x86-64/software/release/12.2.0.1.0',
     zip_extract   =>  true,
     #puppet_download_mnt_point => '/mnt/db/oracle/226-Linux-x86-64/software/release/12.2.0.1.0',
     remote_file   =>  false,
