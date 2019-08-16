@@ -1,5 +1,4 @@
 class profile::oracle::restart122 {
-  include ora_profile::database
 
   package { 'oracle-database-server-12cR2-preinstall.x86_64':
     ensure  => latest,
@@ -26,4 +25,6 @@ class profile::oracle::restart122 {
     mode    => '0775',
     require => User['grid'],
   }
+
+  include ora_profile::database
 }
