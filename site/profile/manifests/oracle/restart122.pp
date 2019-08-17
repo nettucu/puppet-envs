@@ -46,7 +46,7 @@ class profile::oracle::restart122 {
     patch_file   => 'p6880880_122010_Linux-x86-64.zip',
     csi_number   => undef,
     support_id   => undef,
-    opversion    => 12.2.0.1.17,
+    opversion    => '12.2.0.1.17',
     user         => 'oracle',
     group        => 'oinstall',
     download_dir => '/mnt/db/oracle/226-Linux-x86-64/software/oneoffs/12.2.0.1.0',
