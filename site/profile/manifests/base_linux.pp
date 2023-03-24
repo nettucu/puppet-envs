@@ -1,8 +1,8 @@
 class profile::base_linux {
-  if $::operatingsystemmajrelease >= 8 {
-    class { '::chrony' }
-  } else {
+  if($::operatingsystemmajrelease < 8) {
     class { '::ntp': }
+  } else {
+    class { '::chrony': }
   }
   include accounts
 
