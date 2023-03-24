@@ -1,12 +1,12 @@
 #!/bin/bash
 
 iface=${1:-"eth0"}
-state=${2:-"up"}
+action=${2:-"up"}
 
 echo "iface = ${iface}"
-echo "state = ${state}"
+echo "action = ${action}"
 
-[[ "${state}" != "up" ]] && exit 0
+[[ "${action}" != "up" ]] && exit 0
 
 host="$( hostname -s )"
 domain="$( hostname -d )"
@@ -15,13 +15,19 @@ domain=${domain:-"vm.local"}
 dns=192.168.1.2
 
 ipaddr=$( ip -4 -o addr show dev ${iface} | awk '{ print $4 }' | cut -d '/' -f1 )
-if [[ "${iface}" = "eth1" ]]; then
-  host="${host}-p"
-elif [[ "${iface}" = "eth2" ]]; then
-  host="${host}-i"
-elif [[ "${iface}" = "eth3" ]]; then
-  exit 0
-fi
+
+# depending on which number the interface has in the list we assign
+# 2: -p
+# 3: -i
+# everything else remains the same
+iface_no=$( ip -o -4 link show | grep ether | cut -d ':' -f2 | tr -d ' ' | awk "/${iface}/ { print NR; }" )
+
+case $iface_no in
+  1) host=${host} ;;
+  2) host="${host}-p" ;;
+  3) host="${host}-i" ;;
+  *|?) exit 0 ;;
+esac
 
 dnsip="$( dig @${dns} +nocmd +noall +answer A ${host}.${domain} | awk '{ print $NF }' )"
 echo "${iface} IP = ${ipaddr}"
@@ -33,6 +39,6 @@ server ${dns}
 zone ${domain}
 update delete ${host}.${domain} A
 update add ${host}.${domain} 86400 A ${ipaddr}
-show 
+show
 send" | nsupdate
 fi

@@ -27,12 +27,12 @@ mod 'herculesteam/augeasproviders_core', '2.5.0'
 mod 'herculesteam/augeasproviders_shellvar'
 mod 'herculesteam/augeasproviders_sysctl', '2.3.1'
 
-mod 'enterprisemodules-easy_type', '2.12.5'
-mod 'enterprisemodules-ora_install', '4.8.2'
-mod 'enterprisemodules-ora_config', '3.8.1'
-mod 'enterprisemodules-ora_profile', '0.10.2'
-mod 'enterprisemodules-ora_cis', '2.1.1'
-mod 'enterprisemodules/partition', '0.5.0'
+mod 'enterprisemodules-easy_type', '2.45.0'
+mod 'enterprisemodules-ora_install', '6.4.1'
+mod 'enterprisemodules-ora_config', '3.22.3'
+mod 'enterprisemodules-ora_profile', '0.43.0'
+mod 'enterprisemodules-ora_secured', '4.4.0'
+mod 'enterprisemodules/partition', '0.6.0'
 
 mod "puppet/r10k"
 
