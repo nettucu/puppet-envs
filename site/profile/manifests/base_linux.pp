@@ -1,5 +1,5 @@
 class profile::base_linux {
-  if(versioncmp( $::operatingsystemmajrelease, 8) == -1) {
+  if(versioncmp( $::operatingsystemmajrelease, "8") == -1) {
     class { '::ntp': }
   } else {
     class { '::chrony': }
