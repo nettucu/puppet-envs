@@ -3,7 +3,7 @@ forge "http://forge.puppet.com"
 mod 'puppetlabs/stdlib',  '4.25.1'
 mod 'puppetlabs/concat', '4.2.1'
 #mod 'puppetlabs/pe_gem'
-mod 'puppetlabs/ruby'
+#mod 'puppetlabs/ruby'
 #mod 'puppetlabs/gcc'
 #mod 'croddy/make'
 mod 'puppetlabs/vcsrepo'
