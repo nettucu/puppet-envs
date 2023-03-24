@@ -6,6 +6,10 @@ ntp::servers:
   - 0.ro.pool.ntp.org
   - 1.ro.pool.ntp.org
 
+chrony::servers:
+  - 0.ro.pool.ntp.org
+  - 1.ro.pool.ntp.org
+
 #loopback::devices:
 #  /u01/asmdisks:
 #    owner: oracle

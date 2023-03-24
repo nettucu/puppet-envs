@@ -1,5 +1,9 @@
 class profile::base_linux {
-  class { '::ntp': }
+  if $::operatingsystemmajrelease >= 8 {
+    class { '::chrony' }
+  } else {
+    class { '::ntp': }
+  }
   include accounts
 
   #include loopback
@@ -23,9 +27,12 @@ class profile::base_linux {
 
   if $::operatingsystemmajrelease =~ /^7/ {
     $services = ['dkms', 'NetworkManager']
+  } elsif $::operatingsystemmajrelease =~ /^8/ {
+    $services = ['NetworkManager']
   } else {
-    $services = ['dkms_autoinstaller', 'NetworkManager']
+    $services = ['NetworkManager']
   }
+
   service { $services:
     ensure  => running,
     require => Package[$packages],
