@@ -1,5 +1,5 @@
 #include ::oradb
-class profile::oracle::restart18c {
+class profile::oracle::restart19c {
   include ::oradb
 
   package { 'oracle-database-preinstall-19c':
