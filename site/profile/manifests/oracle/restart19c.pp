@@ -11,8 +11,7 @@ class profile::oracle::restart19c {
     owner   => 'grid',
     group   => 'oinstall',
     mode    => '0775',
-    require => User['grid'],
-    require => File['/u01'],
+    require => [User['grid'], File['/u01']]
   }
   file { ['/u01/app/oracle', '/u01/app/oracle/product']:
     ensure  => directory,
