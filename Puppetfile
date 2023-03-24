@@ -36,7 +36,7 @@ mod 'enterprisemodules/partition', '0.6.0'
 
 mod "puppet/r10k"
 
-mod "puppetlabs/ntp"
+mod "puppetlabs/ntp", :latest
 
 # Modules from Github using various references
 #mod 'redis',
