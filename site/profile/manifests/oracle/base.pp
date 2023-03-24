@@ -58,4 +58,10 @@ class profile::oracle::base {
     content => file('profile/etc/oraInst.loc'),
     replace => false,
   }
+  file { '/u01':
+    ensure => directory,
+    mode   => '0755',
+    owner  => 'root',
+    group  => 'root',
+  }
 }

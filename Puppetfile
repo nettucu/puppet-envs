@@ -37,6 +37,7 @@ mod 'enterprisemodules/partition', '0.6.0'
 mod "puppet/r10k"
 
 mod "puppetlabs/ntp", :latest
+mod "puppetlabs/chrony", :latest
 
 # Modules from Github using various references
 #mod 'redis',
